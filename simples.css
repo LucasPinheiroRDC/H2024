@@ -1,0 +1,23 @@
+header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 32px 0;
+    background-color: #000; /* Certifique-se de que o background está visível */
+}
+
+/* Ajusta a imagem para ser responsiva e não ultrapassar os limites */
+header img {
+    max-width: 100%; /* Imagem ocupa no máximo 100% do width */
+    height: auto; /* Mantém a proporção da imagem */
+    display: block; /* Remove espaços indesejados em torno da imagem */
+}
+
+/* Caso o header seja muito alto, limite a altura máxima */
+@media (max-width: 768px) {
+    header img {
+        max-height: 80vh; /* Limita a altura máxima da imagem em telas menores */
+    }
+}
+
