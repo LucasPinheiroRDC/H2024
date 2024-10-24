@@ -1793,7 +1793,7 @@ a {
   .circle p {
     margin-top: 10px; /* Espaçamento entre a imagem e o texto */
     font-size: 16px; /* Define o tamanho do texto */
-    color: #000; /* Cor do texto */
+    color: #e8e8e8; /* Cor do texto */
   }
   
   .row {
@@ -1809,7 +1809,7 @@ a {
 
     .circle a {
         font-size: 0.9rem;
-        text-decoration: underline;
+        text-decoration: overline;
     }
 }
 
@@ -1821,7 +1821,7 @@ a {
 
     .circle a {
         font-size: 0.9rem;
-        text-decoration: underline;
+        text-decoration: overline;
     }
 }
 
@@ -1905,9 +1905,9 @@ a {
     .container {
       width: 100%;
       margin-top: 30px;
-      background: rgba(26, 24, 24, 0.3);
+      background: rgb(31 31 31 / 30%);
       backdrop-filter: blur(15px);
-      height: 35vh;
+      height: 38vh;
     }
   
     .l-cards {
@@ -1978,6 +1978,14 @@ a {
   
     #back-to-top {
       display: none !important;
+    }
+
+    body {
+        line-height: 0.5
+    }
+
+    .container{
+        line-height: 1.5
     }
   
     .navigation {
@@ -2063,8 +2071,7 @@ a {
     position: relative;
     width: 100%;
     height: 70vh; /* A altura será relativa à altura da viewport */
-    background: url(BG9.png) no-repeat center center;
-    background-size: cover; /* Garante que a imagem cubra o espaço sem distorção */
+
 }
 
 .HALL2 {
