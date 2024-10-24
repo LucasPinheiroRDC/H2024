@@ -74,6 +74,7 @@ header img {
     font-size: 4.5rem;
   }
   
+
   @media all and (max-width: 768px) {
     h1 {
       font-size: calc(1.5rem * var(--smaller));
@@ -84,8 +85,20 @@ header img {
     }
     
     li span {
-      font-size: calc(3.375rem * var(--smaller));
+      font-size: calc(4.375rem * var(--smaller));
     }
+
+    .contadorsite {
+      line-height: 1.5;
+    }
+
+    .heroi {
+      background: url(BG10.png);
+      background-size: cover;
+  }
+
+
+
   }
   #countdown ul {
     display: flex;
@@ -109,7 +122,7 @@ header img {
     gap: 50px;
     min-height: 300px;
     height: 587px;
-    background: url(image\ 1.png);
+    background: url(BG13.png);
     background-size: cover;
     
 }
