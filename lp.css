@@ -355,8 +355,9 @@ a {
 
 .w3-ul {
     list-style-type: none;
-    padding: 0;
-    margin: 0
+    padding: 0px;
+    margin: 9px;
+    border-radius: 10%;
 }
 
 .w3-ul li {
@@ -979,6 +980,7 @@ a {
 
 .w3-container,.w3-panel {
     padding: 0.01em 16px
+    
 }
 
 .w3-panel {
@@ -1488,6 +1490,8 @@ a {
 .w3-white,.w3-hover-white:hover {
     color: #000!important;
     background-color: rgba(191, 14, 14, 0.98) !important;
+    background: rgba(26, 24, 24, 0.9); /* Fundo branco com 30% de opacidade */
+    backdrop-filter: blur(15px); /* Efeito de desfoque */
 }
 
 .w3-black,.w3-hover-black:hover {
@@ -1624,7 +1628,7 @@ a {
 }
 
 .w3-text-grey,.w3-hover-text-grey:hover,.w3-text-gray,.w3-hover-text-gray:hover {
-    color: #757575!important
+    color: #050505!important
 }
 
 .w3-text-light-grey,.w3-hover-text-light-grey:hover,.w3-text-light-gray,.w3-hover-text-light-gray:hover {
@@ -1772,43 +1776,30 @@ a {
     text-align: center;
 }
 
-.row {
-    display: flex;
-    justify-content: space-evenly;   
-    margin-bottom: 20px;
-    margin-top: 30px;
-}
-
 .circle {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    overflow: hidden;
-    margin: 10px;
+    text-align: center; /* Centraliza o conteúdo dentro de cada bloco */
+    margin: 20px; /* Adiciona espaçamento entre os blocos */
+  }
+  
+  .circle img {
+    display: block; /* Exibe a imagem como um bloco */
+    margin: 0 auto; /* Centraliza a imagem */
+    width: 80px; /* Define a largura da imagem */
+    height: 80px; /* Define a altura da imagem */
+    border-radius: 50%; /* Torna a imagem circular */
+    object-fit: cover; /* Garante que a imagem se ajuste ao círculo sem distorção */
+  }
+  
+  .circle p {
+    margin-top: 10px; /* Espaçamento entre a imagem e o texto */
+    font-size: 16px; /* Define o tamanho do texto */
+    color: #000; /* Cor do texto */
+  }
+  
+  .row {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.circle img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-}
-
-.circle a {
-    display: block;
-    margin-top: 10px;
-    font-size: 1rem;
-    color: #3498db;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.circle a:hover {
-    color: #2980b9;
-}
+    justify-content: space-around; /* Distribui as fotos horizontalmente */
+  }
 
 @media (max-width: 768px) {
     .circle {
@@ -1818,6 +1809,7 @@ a {
 
     .circle a {
         font-size: 0.9rem;
+        text-decoration: underline;
     }
 }
 
@@ -1829,6 +1821,7 @@ a {
 
     .circle a {
         font-size: 0.9rem;
+        text-decoration: underline;
     }
 }
 
@@ -1912,6 +1905,9 @@ a {
     .container {
       width: 100%;
       margin-top: 30px;
+      background: rgba(26, 24, 24, 0.3);
+      backdrop-filter: blur(15px);
+      height: 33vh;
     }
   
     .l-cards {
@@ -2062,33 +2058,6 @@ a {
     }
 }
 
-/* devils 1 */
-.devil{
-position: relative;
-width: 459px;
-height: 539px;
-
-background: url(devils1.png);
-}
-
-/* CHAMAS DA PERDICAO 1 */
-.chamasdaper{
-position: relative;
-width: 628px;
-height: 114px;
-
-background: url(CHAMAS1.png);
-
-}
-/* Edição 4.0 1 */
-.ed4{
-position: relative;
-width: 208px;
-height: 60px;
-
-background: url(Edição4.png);
-
-}
 /* HALLOWEEN 1 */
 .HALL1 {
     position: relative;
@@ -2098,15 +2067,37 @@ background: url(Edição4.png);
     background-size: cover; /* Garante que a imagem cubra o espaço sem distorção */
 }
 
+.HALL2 {
+    position: relative;
+    width: 100%;
+    height: 70vh; /* A altura será relativa à altura da viewport */
+}
+
 @media (max-width: 768px) {
     .HALL1 {
-        height: 50vh; /* Reduz a altura para telas menores */
+        height: 45vh;
+        background-size: cover;
+
     }
+
+    .HALL2 {
+        height: 25vh;
+        margin-bottom: -34px;
+    }
+
 }
 
 @media (max-width: 480px) {
     .HALL1 {
-        height: 40vh; /* Ajuste adicional para dispositivos muito pequenos */
+        height: 45vh;
+        background-size: cover;
+    }
+
+    .HALL2 {
+        height: 25vh;
+        margin-bottom: -34px;
+        width: 86%;
+        padding-left: 20%;
     }
 
     .map-container {
@@ -2120,7 +2111,6 @@ background: url(Edição4.png);
 
 
         footer {
-            background-color: #808080; /* Fundo cinza */
             color: white;
             text-align: center;
             padding: 15px;
@@ -2132,4 +2122,8 @@ background: url(Edição4.png);
             justify-content: center;
             align-items: center;
         }
+
     }
+    
+    
+
