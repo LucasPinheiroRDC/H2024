@@ -33,7 +33,7 @@
   
           //do something later when date is reached
           if (distance < 0) {
-            document.getElementById("headline").innerText = "É hoje!!";
+            document.getElementById("headline").innerText = "Sua hora chegou!! Dirija-se ao local combinado imediatamente!!!";
             document.getElementById("countdown").style.display = "none";
             document.getElementById("content").style.display = "block";
             clearInterval(x);
