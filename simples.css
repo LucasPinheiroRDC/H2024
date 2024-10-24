@@ -92,11 +92,6 @@ header img {
       line-height: 1.5;
     }
 
-    .heroi {
-      background: url(BG10.png);
-      background-size: cover;
-  }
-
 
 
   }
@@ -122,8 +117,8 @@ header img {
     gap: 50px;
     min-height: 300px;
     height: 587px;
-    background: url(BG13.png);
-    background-size: cover;
+    background: rgb(31 31 31 / 30%);
+    backdrop-filter: blur(15px);
     
 }
 
