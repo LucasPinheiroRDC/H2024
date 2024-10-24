@@ -1628,7 +1628,8 @@ a {
 }
 
 .w3-text-grey,.w3-hover-text-grey:hover,.w3-text-gray,.w3-hover-text-gray:hover {
-    color: #050505!important
+    color: #fbfbfb!important;
+
 }
 
 .w3-text-light-grey,.w3-hover-text-light-grey:hover,.w3-text-light-gray,.w3-hover-text-light-gray:hover {
