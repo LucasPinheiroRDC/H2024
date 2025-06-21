@@ -1,167 +1,96 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="pt-br">
 <head>
-    <title>Halloween 2024</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="lp.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="simples.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noite de Halloween</title>
+    <!-- Importa a fonte 'Creepster' do Google Fonts para um visual assustador -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Creepster&display=swap">
+    <!-- Link para o arquivo CSS para estilização -->
+    <link rel="stylesheet" href="simples.css"></head>
+<body>
+    <!-- Container principal para centralizar o conteúdo e aplicar o tema -->
+    <div class="container">
+        <h1>Bem-vindo à Noite de Halloween!</h1>
 
-    <style>
-        body,
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-            font-family: "Montserrat", sans-serif
-        }
-
-        .w3-row-padding img {
-            margin-bottom: 12px
-        }
-
-        /* Set the width of the sidebar to 120px */
-        .w3-sidebar {
-            width: 120px;
-            background: #222;
-        }
-
-        /* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
-
-
-        /* Remove margins from "page content" on small screens */
-        @media only screen and (max-width: 600px) {
-            #main {
-                margin-left: 0
-            }
-        }
-    </style>
-</head>
-
-<body class="w3-black">
-
-    <!-- Icon Bar (Sidebar - hidden on small screens) -->
-
-    <!-- Header/Home -->
-    <header class="w3-container w3-padding-32 w3-center w3-black heroi" style="padding-right: 0px; padding-left: 13px; "
-        id="home">
-
-        <div class="contadorsite" style="padding-bottom: 16px;">
-            <h1 id="headline"></h1>
-            <div id="countdown">
-                <ul>
-                    <li><span id="days"></span>day</li>
-                    <li style="color:white"><span id="hours"></span>hours</li>
-                    <li style="color:white"><span id="minutes"></span>minutes</li>
-                    <li style="color:white"><span id="seconds"></span>seconds</li>
-                </ul>
-            </div>
+        <!-- Container para a contagem regressiva -->
+        <div class="countdown-wrapper">
+            <p>Contagem Regressiva para o Dia das Bruxas:</p>
+            <div id="countdown" class="countdown-text"></div>
         </div>
 
-    </header>
-
-
-
-    <!-- About Section -->
-    <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
-
-        <div class="w3-padding-large" id="main">
-            <!-- Grid for pricing tables -->
-            <div class="HALL2" style="padding-top: 30px;">
-                <div class="w3-half w3-margin-bottom">
-                    <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
-                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdHcv8NBOCzLE57HRe1wU6tbPc_ssgmqbPXp2dsOEsW1KePYQ/viewform"
-                            target="_blank">
-                            <button class="w3-button w3-white w3-padding-large w3-hover-black">Votar</button>
-                        </a>
-                    </ul>
-                </div>
-
-                <div class="w3-half">
-                    <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
-                        <a href="https://drive.google.com/drive/folders/1Pdz2lO8mXujkoFK430o1Bw3cE74zBvy1?usp=sharing">
-                            <button class="w3-button w3-white w3-padding-large w3-hover-black">Ver Fotos</button>
-                        </a>
-                    </ul>
-                </div>
-                <!-- End Grid/Pricing tables -->
-            </div>
+        <!-- Container para os botões de ação -->
+        <div class="buttons">
+            <button id="photosBtn">Ver Fotos da Festa</button>
+            <button id="voteBtn">Votar na Melhor Fantasia</button>
         </div>
 
-        <section>
-            <div class="HALL1" style=" margin-top: 30px; padding-bottom: 30px; ">
-                <div class="container" style="margin-top: 23px;">
-                    <!-- Primeira linha de fotos -->
-                    <div class="row" style="padding-bottom: 22px;">
-                        <div class="circle">
-                            <img src="image 7.png" alt="Imagem 1">
-                            <p>ORG <a href="https://www.instagram.com/nicolaxmarques/"><strong>@nicolaxmar</strong></a>
-                            </p>
-                        </div>
-                        <div class="circle">
-                            <img src="image 4.png" alt="Imagem 2">
-                            <p>CEO <a href="https://www.instagram.com/lolomendx/"><strong>@lolomendx</strong></a></p>
-                        </div>
-                        <div class="circle">
-                            <img src="image 5.png" alt="Imagem 3">
-                            <p>ORG<br><a href="https://www.instagram.com/matt_dtz/"><strong>@matt_dtz</strong></a></p>
-                        </div>
-                    </div>
-                    <!-- Segunda linha de fotos -->
-                    <div class="row">
-                        <div class="circle">
-                            <img src="image 2.png" alt="Imagem 4">
-                            <p>FOTOS <a href="https://www.instagram.com/rael_scaler/"><strong>@rael_scaler</strong></a>
-                            </p>
-                        </div>
-                        <div class="circle">
-                            <img src="image.png" alt="Imagem 5">
-                            <p>SITE <a href="https://www.instagram.com/ilucasp._/"><strong>@ilucasp._</strong></a></p>
-                        </div>
-                        <div class="circle">
-                            <img src="image 3.png" alt="Imagem 6">
-                            <p>DJ <br><a href="https://www.instagram.com/sx.lec/"><strong>@sx.lec</strong></a></p>
-                        </div>
-                    </div>
+        <!-- Nova seção para os colaboradores -->
+        <section class="collaborators-section">
+            <h2>Nossos Colaboradores</h2>
+            <div class="collaborators-grid">
+                <!-- Colaborador 1: ORG - @nicolaxmar -->
+                <div class="collaborator-item">
+                    <img src="https://www.instagram.com/nicolaxmarques/" alt="ORG nicolaxmar" class="collaborator-avatar">
+                    <p class="collaborator-role">ORG</p>
+                    <p class="collaborator-name">@nicolaxmar</p>
+                </div>
+                <!-- Colaborador 2: CEO - @lolomendx -->
+                <div class="collaborator-item">
+                    <img src="https://www.instagram.com/lolomendx/" alt="CEO lolomendx" class="collaborator-avatar">
+                    <p class="collaborator-role">CEO</p>
+                    <p class="collaborator-name">@lolomendx</p>
+                </div>
+                <!-- Colaborador 3: ORG - @matt_dtz -->
+                <div class="collaborator-item">
+                    <img src="https://www.instagram.com/matt_dtz/" alt="ORG matt_dtz" class="collaborator-avatar">
+                    <p class="collaborator-role">ORG</p>
+                    <p class="collaborator-name">@matt_dtz</p>
+                </div>
+                <!-- Colaborador 4: FOTOS - @rael_scaler -->
+                <div class="collaborator-item">
+                    <img src="https://www.instagram.com/rael_scaler/" alt="FOTOS rael_scaler" class="collaborator-avatar">
+                    <p class="collaborator-role">FOTOS</p>
+                    <p class="collaborator-name">@rael_scaler</p>
+                </div>
+                <!-- Colaborador 5: SITE - @ilucasp -->
+                <div class="collaborator-item">
+                    <img src="https://www.instagram.com/ilucasp._/" alt="SITE ilucasp" class="collaborator-avatar">
+                    <p class="collaborator-role">SITE</p>
+                    <p class="collaborator-name">@ilucasp_</p>
+                </div>
+                <!-- Colaborador 6: DJ - @sx.lec -->
+                <div class="collaborator-item">
+                    <img src="https://www.instagram.com/sx.lec/" alt="DJ sx.lec" class="collaborator-avatar">
+                    <p class="collaborator-role">DJ</p>
+                    <p class="collaborator-name">@sx.lec</p>
                 </div>
             </div>
         </section>
 
+        <!-- Nova seção para a localização (mapa estático) -->
+        <section class="location-section">
+            <h2>Localização</h2>
+            <p>Av. Presidente Wilson, 198</p>
+            <!-- Imagem de placeholder para o mapa. Para um mapa interativo,
+                 seria necessário usar uma API de mapas como Google Maps ou OpenStreetMap. -->
+            <img src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3679.7075339716183!2d-43.296877425231316!3d-22.561348928876754!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9bd56adbd68c5b%3A0x120a50bc5c1653c4!2sR.%20Maestro%20Henrique%20Vogeler%2C%20360%20-%20Jacarepagu%C3%A1%2C%20Rio%20de%20Janeiro%20-%20RJ%2C%2022750-017!5e0!3m2!1spt-BR!2sbr!4v1697994652879!5m2!1spt-BR!2sbr" alt="Mapa da Localização da Av. Presidente Wilson, 198" class="location-map">
+            <a href="https://www.google.com/maps/search/Av.+Presidente+Wilson,+198" target="_blank" class="view-map-link">Ver mapa ampliado</a>
+        </section>
+
     </div>
 
-    <div class="w3-padding-large" id="main">
-        <div class="w3-padding-large">
+    <!-- Container para as animações dos morcegos, posicionado no fundo -->
+    <div id="bat-container"></div>
 
-            <div class="map-container" id="contact">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3679.7075339716183!2d-43.296877425231316!3d-22.561348928876754!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9bd56adbd68c5b%3A0x120a50bc5c1653c4!2sR.%20Maestro%20Henrique%20Vogeler%2C%20360%20-%20Jacarepagu%C3%A1%2C%20Rio%20de%20Janeiro%20-%20RJ%2C%2022750-017!5e0!3m2!1spt-BR!2sbr!4v1697994652879!5m2!1spt-BR!2sbr"
-                    width="100%" height="100%" style="border:0;" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
-            </div>
-
+    <!-- Modal para mensagens temporárias (substitui alert()) -->
+    <div id="message-modal" class="message-modal">
+        <div class="modal-content">
+            <p id="modal-text"></p>
         </div>
-        <!-- END PAGE CONTENT -->
     </div>
 
-    <!-- Footer. This section contains an ad for W3Schools Spaces. You can leave it to support us. -->
-    <footer class="w3-content w3-text-grey w3-xlarge footer-container" style="margin-top: 30px;">
-
-        <p class="w3-small">© 2024 - HALLOWEEN PARTY - All rights reserved</p>
-
-    </footer>
-
-
-
-
-
-
-    <script src="cont.js"></script>
+    <!-- Link para o arquivo JavaScript para a lógica e interatividade -->
+    <script src="script.js"></script>
 </body>
-
 </html>
