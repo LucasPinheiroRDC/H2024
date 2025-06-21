@@ -4,12 +4,13 @@ body {
     color: #ff4500; /* Laranja vibrante de Halloween */
     font-family: 'Creepster', cursive; /* Fonte assustadora importada */
     text-align: center;
-    overflow: hidden; /* Esconde barras de rolagem para a animação */
+    /* REMOVIDO: overflow: hidden; Para permitir a rolagem da página */
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
-    align-items: center;
+    /* ALTERADO: align-items: flex-start; Para que o conteúdo comece do topo e permita rolagem */
+    align-items: flex-start;
     min-height: 100vh; /* Ocupa a altura total da viewport */
     flex-direction: column; /* Organiza os itens verticalmente */
     position: relative; /* Para posicionar elementos filhos */
@@ -24,7 +25,8 @@ body {
     position: relative;
     z-index: 10; /* Garante que o conteúdo fique acima dos morcegos */
     max-width: 90%; /* Responsividade */
-    margin: 20px;
+    margin: 20px auto; /* Centraliza o container horizontalmente e adiciona margem vertical */
+    padding-bottom: 50px; /* Adiciona um padding inferior para melhor visualização do rodapé */
 }
 
 /* Estilo para o título principal */
@@ -216,7 +218,7 @@ h1 {
     border: 3px solid #ff4500;
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(255, 69, 0, 0.7);
-    object-fit: cover; /* Garante que a imagem se ajuste */
+    object-fit: cover; /* Garantia de que a imagem se ajuste */
 }
 
 .view-map-link {
@@ -300,7 +302,7 @@ h1 {
         margin-top: 20px;
     }
 
-    .collaborators-grid {
+    .collaborator-grid { /* Corrigido de collaborators-grid para collaborator-grid */
         grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
         gap: 10px;
     }
