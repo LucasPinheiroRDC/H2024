@@ -1,164 +1,312 @@
-header {
+/* Estilos globais para o corpo da página */
+body {
+    background-color: #1a0000; /* Quase preto, para um fundo sombrio */
+    color: #ff4500; /* Laranja vibrante de Halloween */
+    font-family: 'Creepster', cursive; /* Fonte assustadora importada */
+    text-align: center;
+    overflow: hidden; /* Esconde barras de rolagem para a animação */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ocupa a altura total da viewport */
+    flex-direction: column; /* Organiza os itens verticalmente */
+    position: relative; /* Para posicionar elementos filhos */
+}
+
+/* Container principal que agrupa o título, contagem e botões */
+.container {
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo semi-transparente para o conteúdo */
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(255, 69, 0, 0.8); /* Sombra laranja brilhante para destaque */
+    position: relative;
+    z-index: 10; /* Garante que o conteúdo fique acima dos morcegos */
+    max-width: 90%; /* Responsividade */
+    margin: 20px;
+}
+
+/* Estilo para o título principal */
+h1 {
+    font-size: clamp(2em, 5vw, 3.5em); /* Tamanho responsivo do título */
+    margin-bottom: 30px;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7); /* Sombra no texto para profundidade */
+}
+
+/* Wrapper para a contagem regressiva */
+.countdown-wrapper {
+    margin-bottom: 30px;
+    border: 2px solid #ff4500; /* Borda laranja */
+    padding: 15px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
+    display: inline-block; /* Ajusta o tamanho ao conteúdo */
+}
+
+/* Estilo para o texto da contagem regressiva */
+.countdown-text {
+    font-size: clamp(1.8em, 4vw, 2.8em); /* Tamanho responsivo */
+    color: #ff0000; /* Vermelho vibrante */
+    font-weight: bold;
+    white-space: pre-line; /* Permite quebras de linha definidas no JS */
+    line-height: 1.2;
+}
+
+/* Container para os botões */
+.buttons {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os botões quebrem a linha em telas menores */
+    justify-content: center;
+    gap: 20px; /* Espaçamento entre os botões */
+    margin-top: 30px;
+}
+
+/* Estilo para os botões */
+.buttons button {
+    background-color: #8b0000; /* Vermelho escuro */
+    color: white;
+    border: 2px solid #ff4500;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-size: clamp(1.2em, 2.5vw, 1.5em); /* Tamanho responsivo da fonte */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; /* Transições suaves */
+    font-family: 'Creepster', cursive;
+    box-shadow: 0 0 15px rgba(255, 69, 0, 0.6);
+    flex-grow: 1; /* Permite que os botões cresçam para preencher o espaço */
+    max-width: 300px; /* Largura máxima para evitar botões muito largos */
+}
+
+.buttons button:hover {
+    background-color: #ff4500; /* Muda para laranja ao passar o mouse */
+    transform: scale(1.05); /* Pequeno aumento de tamanho */
+    box-shadow: 0 0 25px rgba(255, 69, 0, 0.9); /* Sombra mais intensa */
+}
+
+/* Estilo para os morcegos */
+.bat {
+    position: absolute;
+    width: 60px; /* Largura do morcego */
+    height: 30px; /* Altura do morcego */
+    /* SVG simples de morcego para o background-image */
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 50"><path fill="%23666666" d="M0 25 Q25 0 50 25 T100 25 Q75 50 50 25 T0 25 Z"/></svg>');
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: rotate(var(--rotation, 0deg)); /* Rotação inicial definida por variável JS */
+    animation: fly var(--animation-duration, 10s) linear infinite; /* Animação de voo com duração variável */
+    z-index: 5; /* Abaixo do conteúdo principal */
+    opacity: 0; /* Inicia invisível e fade-in */
+}
+
+/* Keyframes para a animação de voo do morcego */
+@keyframes fly {
+    0% { transform: translate(calc(var(--start-x) * 1vw), calc(var(--start-y) * 1vh)) rotate(var(--rotation, 0deg)); opacity: 0; }
+    5% { opacity: 1; } /* Fade-in */
+    95% { opacity: 1; } /* Mantém visível */
+    100% { transform: translate(calc(var(--end-x) * 1vw), calc(var(--end-y) * 1vh)) rotate(var(--rotation, 0deg)); opacity: 0; } /* Fade-out */
+}
+
+/* Estilos para o modal de mensagens */
+.message-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.9);
+    color: #fff;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 69, 0, 0.8);
+    z-index: 100; /* Acima de tudo */
+    display: none; /* Escondido por padrão */
+    animation: fadeInOut 3s forwards; /* Animação para aparecer e desaparecer */
+}
+
+.message-modal.show {
+    display: block; /* Mostra o modal */
+}
+
+/* Keyframes para a animação de fade-in e fade-out do modal */
+@keyframes fadeInOut {
+    0% { opacity: 0; transform: translate(-50%, -50%) scale(0.8); }
+    10% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+    90% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+    100% { opacity: 0; transform: translate(-50%, -50%) scale(0.8); }
+}
+
+/* ===============================================
+   NOVOS ESTILOS PARA SEÇÃO DE COLABORADORES E LOCALIZAÇÃO
+   =============================================== */
+.collaborators-section, .location-section {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 30px;
+    border-radius: 10px;
+    margin-top: 40px;
+    box-shadow: 0 0 20px rgba(255, 69, 0, 0.5);
+    width: 100%; /* Ocupa a largura total do container pai */
+    max-width: 800px; /* Limita a largura máxima */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.collaborators-section h2, .location-section h2 {
+    font-size: clamp(1.8em, 3.5vw, 2.5em);
+    margin-bottom: 25px;
+    color: #ff4500;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.7);
+}
+
+.collaborators-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Grid responsivo para colaboradores */
+    gap: 20px;
+    justify-items: center; /* Centraliza os itens no grid */
+    margin-top: 20px;
+}
+
+.collaborator-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 69, 0, 0.3);
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.collaborator-item:hover {
+    transform: translateY(-5px);
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.collaborator-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%; /* Torna a imagem circular */
+    object-fit: cover;
+    border: 3px solid #ff4500;
+    margin-bottom: 10px;
+    box-shadow: 0 0 10px rgba(255, 69, 0, 0.5);
+}
+
+.collaborator-role {
+    font-size: 1em;
+    color: #ff0000;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.collaborator-name {
+    font-size: 0.9em;
+    color: #ffd700; /* Amarelo dourado para os nomes */
+}
+
+.location-section p {
+    font-size: clamp(1em, 2vw, 1.2em);
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.location-map {
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 32px 0;
-    background-color: #000; /* Certifique-se de que o background está visível */
+    max-width: 600px; /* Largura máxima para o mapa */
+    height: 300px;
+    border: 3px solid #ff4500;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(255, 69, 0, 0.7);
+    object-fit: cover; /* Garante que a imagem se ajuste */
 }
 
-/* Ajusta a imagem para ser responsiva e não ultrapassar os limites */
-header img {
-    max-width: 100%; /* Imagem ocupa no máximo 100% do width */
-    height: auto; /* Mantém a proporção da imagem */
-    display: block; /* Remove espaços indesejados em torno da imagem */
-}
-
-/* Caso o header seja muito alto, limite a altura máxima */
-@media (max-width: 768px) {
-    header img {
-        max-height: 80vh; /* Limita a altura máxima da imagem em telas menores */
-        z-index: 2;
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* general styling */
-:root {
-    --smaller: .75;
-  }
-  
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  
-
-  .contadorsite {
-    color: #f64747;
-    margin: 0 auto;
-    text-align: center;
-    z-index: 25;
-  }
-  
-  h1 {
-    font-weight: normal;
-    letter-spacing: .125rem;
-    text-transform: uppercase;
-  }
-  
-  li {
+.view-map-link {
     display: inline-block;
-    font-size: 1.5em;
-    list-style-type: none;
-    padding: 1em;
-    text-transform: uppercase;
-  }
-  
-  li span {
-    display: block;
-    font-size: 4.5rem;
-  }
-  
+    margin-top: 20px;
+    color: #ffd700; /* Amarelo dourado */
+    text-decoration: none;
+    font-size: 1em;
+    border-bottom: 1px solid #ffd700;
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
 
-  @media all and (max-width: 768px) {
+.view-map-link:hover {
+    color: #ff0000;
+    border-color: #ff0000;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .container {
+        padding: 25px;
+    }
+
     h1 {
-      font-size: calc(1.5rem * var(--smaller));
-    }
-    
-    li {
-      font-size: calc(1.125rem * var(--smaller));
-    }
-    
-    li span {
-      font-size: calc(4.375rem * var(--smaller));
+        font-size: 2.5em;
     }
 
-    .contadorsite {
-      line-height: 1.5;
+    .countdown-text {
+        font-size: 2em;
     }
 
+    .buttons button {
+        font-size: 1.3em;
+        padding: 12px 25px;
+    }
 
+    .collaborators-section, .location-section {
+        padding: 20px;
+        margin-top: 30px;
+    }
 
-  }
-  #countdown ul {
-    display: flex;
-    flex-direction: column; /* Alinha os itens na vertical */
-    list-style-type: none; /* Remove as bolinhas da lista */
-    padding: 0;
-    margin: 0;
-  }
-  
-  #countdown li {
-    margin: 10px 0; /* Adiciona espaçamento entre os itens */
-    text-align: center;
-    flex-direction: row;
-  }
+    .collaborators-grid {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 15px;
+    }
 
-.heroi{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 50px;
-    min-height: 300px;
-    height: 587px;
-    background: rgb(31 31 31 / 30%);
-    backdrop-filter: blur(15px);
-    
+    .collaborator-avatar {
+        width: 70px;
+        height: 70px;
+    }
+
+    .collaborator-role {
+        font-size: 0.9em;
+    }
+
+    .collaborator-name {
+        font-size: 0.8em;
+    }
 }
 
-.cams{
-    background: rgba(26, 24, 24, 0.3); /* Fundo branco com 30% de opacidade */
-    backdrop-filter: blur(15px); /* Efeito de desfoque */
-    color: black; /* Cor do texto */
-    padding: 20px;
-    text-align: center;
-    width: 90%; /* Largura total */
-    height: 60%;
-    top: 0; /* Fixa no topo da página */
-    border-radius: 10px; /* Bordas arredondadas */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Sombra */
-}
-
-.l-cards {
-    display: flex;
-  }
-  .l-card {
-    width: 50%;
-    margin-top: 50px !important;
-    padding-left: 25px;
-    padding-right: 25px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  @media screen and (max-width: 768px) {
-
-    .l-cards {
-      flex-direction: column;
+@media (max-width: 480px) {
+    .container {
+        padding: 15px;
     }
-  
-    .l-card {
-      width: 100%;
+
+    h1 {
+        font-size: 2em;
     }
-    .l-card {
-        padding: 0;
-      }
+
+    .countdown-text {
+        font-size: 1.5em;
+    }
+
+    .buttons button {
+        font-size: 1.1em;
+        padding: 10px 20px;
+    }
+
+    .collaborators-section, .location-section {
+        padding: 15px;
+        margin-top: 20px;
+    }
+
+    .collaborators-grid {
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+        gap: 10px;
+    }
+
+    .collaborator-avatar {
+        width: 60px;
+        height: 60px;
+    }
 }
