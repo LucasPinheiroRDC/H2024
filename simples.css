@@ -300,6 +300,7 @@ h1 {
     .collaborators-section, .location-section {
         padding: 15px;
         margin-top: 20px;
+        margin-left: -4;
     }
 
     .collaborator-grid { /* Corrigido de collaborators-grid para collaborator-grid */
