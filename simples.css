@@ -148,7 +148,7 @@ h1 {
     box-shadow: 0 0 20px rgba(255, 69, 0, 0.5);
     width: 100%; /* Ocupa a largura total do container pai */
     max-width: 800px; /* Limita a largura máxima */
-    margin-left: -20px;
+    margin-left: -28px;
     margin-right: auto;
 }
 
