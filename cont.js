@@ -27,10 +27,10 @@ function updateCountdown() {
     const now = new Date(); // Pega a data e hora atuais
     // Define o dia 27 de Outubro. O mês é 9 porque é 0-indexado (Janeiro = 0, Outubro = 9)
     let targetYear = now.getFullYear(); // Começa com o ano atual
-    let targetDate = new Date(targetYear, 9, 27);
+    let targetDate = new Date(targetYear, 9, 31);
 
-    // Se a data atual já passou de 27 de Outubro deste ano,
-    // a contagem regressiva é para 27 de Outubro do próximo ano.
+    // Se a data atual já passou de 31 de Outubro deste ano,
+    // a contagem regressiva é para 31 de Outubro do próximo ano.
     if (now > targetDate) {
         targetYear++;
         targetDate.setFullYear(targetYear);
