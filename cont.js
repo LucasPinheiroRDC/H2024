@@ -1,5 +1,4 @@
 const countdownElement = document.getElementById('countdown');
-const batContainer = document.getElementById('bat-container');
 const messageModal = document.getElementById('message-modal');
 const modalText = document.getElementById('modal-text');
 
@@ -44,35 +43,6 @@ function updateCountdown() {
 setInterval(updateCountdown, 1000);
 updateCountdown();
 
-const numberOfBats = 8;
-
-function createBat() {
-    const bat = document.createElement('div');
-    bat.classList.add('bat');
-    batContainer.appendChild(bat);
-
-    const startX = -10 - (Math.random() * 20);
-    const startY = Math.random() * 100;
-    const endX = 110 + (Math.random() * 20);
-    const endY = Math.random() * 100;
-
-    bat.style.setProperty('--start-x', startX);
-    bat.style.setProperty('--start-y', startY);
-    bat.style.setProperty('--end-x', endX);
-    bat.style.setProperty('--end-y', endY);
-    bat.style.setProperty('--rotation', `${Math.random() * 30 - 15}deg`);
-    bat.style.setProperty('--animation-duration', `${Math.random() * 5 + 8}s`);
-    bat.style.animationDelay = `-${Math.random() * 5}s`;
-
-    bat.addEventListener('animationend', () => {
-        bat.remove();
-        createBat();
-    });
-}
-
-for (let i = 0; i < numberOfBats; i++) {
-    createBat();
-}
 
 document.getElementById('photosBtn').addEventListener('click', () => {
     showMessage('Aqui você veria as fotos da festa! 📸');
@@ -81,3 +51,4 @@ document.getElementById('photosBtn').addEventListener('click', () => {
 document.getElementById('voteBtn').addEventListener('click', () => {
     showMessage('Aqui você seria levado ao formulário de votação! 🗳️');
 });
+
