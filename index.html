@@ -4,92 +4,80 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Noite de Halloween</title>
-    <!-- Importa a fonte 'Creepster' do Google Fonts para um visual assustador -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Creepster&display=swap">
-    <!-- Link para o arquivo CSS para estilização -->
-    <link rel="stylesheet" href="simples.css"></head>
+    <link rel="stylesheet" href="style.css">
+</head>
 <body>
-    <!-- Container principal para centralizar o conteúdo e aplicar o tema -->
+    <!-- Caveiras decorativas -->
+    <div class="floating-skull" style="top: 10%; left: 5%; animation-delay: 0s;">💀</div>
+    <div class="floating-skull" style="top: 20%; right: 5%; animation-delay: 3s;">💀</div>
+    <div class="floating-skull" style="bottom: 15%; left: 10%; animation-delay: 6s;">👻</div>
+    <div class="floating-skull" style="bottom: 25%; right: 8%; animation-delay: 9s;">👻</div>
+
     <div class="container">
         <h1>Bem-vindo à Noite de Halloween!</h1>
 
-        <!-- Container para a contagem regressiva -->
         <div class="countdown-wrapper">
             <p>Contagem Regressiva para o Dia das Bruxas:</p>
             <div id="countdown" class="countdown-text"></div>
         </div>
 
-        <!-- Container para os botões de ação -->
         <div class="buttons">
-            <button id="photosBtn">Ver Fotos da Festa</button>
-            <button id="voteBtn">Votar na Melhor Fantasia</button>
+            <button id="photosBtn">Ver Fotos da Festa 📸</button>
+            <button id="voteBtn">Votar na Melhor Fantasia 🗳️</button>
         </div>
 
-        <!-- Nova seção para os colaboradores -->
         <section class="collaborators-section">
             <h2>Nossos Colaboradores</h2>
             <div class="collaborators-grid">
-                <!-- Colaborador 1: ORG - @nicolaxmar -->
                 <div class="collaborator-item">
-                    <img src="image 7.png" alt="ORG nicolaxmar" class="collaborator-avatar">
+                    <div class="collaborator-avatar" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 30px;">👤</div>
                     <p class="collaborator-role">ORG</p>
                     <p class="collaborator-name">@nicolaxmar</p>
                 </div>
-                <!-- Colaborador 2: CEO - @lolomendx -->
                 <div class="collaborator-item">
-                    <img src="image 4.png" alt="CEO lolomendx" class="collaborator-avatar">
+                    <div class="collaborator-avatar" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 30px;">👤</div>
                     <p class="collaborator-role">CEO</p>
                     <p class="collaborator-name">@lolomendx</p>
                 </div>
-                <!-- Colaborador 3: ORG - @matt_dtz -->
                 <div class="collaborator-item">
-                    <img src="image 5.png" alt="ORG matt_dtz" class="collaborator-avatar">
+                    <div class="collaborator-avatar" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 30px;">👤</div>
                     <p class="collaborator-role">ORG</p>
                     <p class="collaborator-name">@matt_dtz</p>
                 </div>
-                <!-- Colaborador 4: FOTOS - @rael_scaler -->
                 <div class="collaborator-item">
-                    <img src="image 2.png" alt="FOTOS rael_scaler" class="collaborator-avatar">
+                    <div class="collaborator-avatar" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 30px;">📷</div>
                     <p class="collaborator-role">FOTOS</p>
                     <p class="collaborator-name">@rael_scaler</p>
                 </div>
-                <!-- Colaborador 5: SITE - @ilucasp -->
                 <div class="collaborator-item">
-                    <img src="image.png" alt="SITE ilucasp" class="collaborator-avatar">
+                    <div class="collaborator-avatar" style="background: linear-gradient(135deg, #30cfd0 0%, #330867 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 30px;">💻</div>
                     <p class="collaborator-role">SITE</p>
                     <p class="collaborator-name">@ilucasp_</p>
                 </div>
-                <!-- Colaborador 6: DJ - @sx.lec -->
                 <div class="collaborator-item">
-                    <img src="image 3.png" alt="DJ sx.lec" class="collaborator-avatar">
+                    <div class="collaborator-avatar" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 30px;">🎧</div>
                     <p class="collaborator-role">DJ</p>
                     <p class="collaborator-name">@sx.lec</p>
                 </div>
             </div>
         </section>
 
-        <!-- Nova seção para a localização (mapa estático) -->
-       <section class="location-section">
-            <h2>Localização</h2>
+        <section class="location-section">
+            <h2>Localização 📍</h2>
             <p>R. Maestro Henrique Vogeler, 360 - Brás de Pina</p>
-            <!-- Imagem de placeholder para o mapa. Para um mapa interativo,
-                 seria necessário usar uma API de mapas como Google Maps ou OpenStreetMap. -->
-            <a href="https://www.google.com/maps/search/R.+Maestro+Henrique+Vogeler,+360+-+Br%C3%A1s+de+Pina" target="_blank" class="view-map-link">Ver mapa ampliado</a>
+            <a href="https://www.google.com/maps/search/R.+Maestro+Henrique+Vogeler,+360+-+Br%C3%A1s+de+Pina" target="_blank" class="view-map-link">🗺️ Ver mapa ampliado</a>
         </section>
-
     </div>
 
-    <!-- Container para as animações dos morcegos, posicionado no fundo -->
     <div id="bat-container"></div>
 
-    <!-- Modal para mensagens temporárias (substitui alert()) -->
     <div id="message-modal" class="message-modal">
         <div class="modal-content">
             <p id="modal-text"></p>
         </div>
     </div>
 
-    <!-- Link para o arquivo JavaScript para a lógica e interatividade -->
-    <script src="cont.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
