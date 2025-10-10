@@ -1,5 +1,5 @@
 const countdownElement = document.getElementById('countdown');
-const batContainer = document.getElementById('bat-container');
+const spiderContainer = document.getElementById('spider-container');
 const messageModal = document.getElementById('message-modal');
 const modalText = document.getElementById('modal-text');
 
@@ -44,35 +44,48 @@ function updateCountdown() {
 setInterval(updateCountdown, 1000);
 updateCountdown();
 
-const numberOfBats = 8;
+// Aranhas descendo do topo com linha de teia
+const numberOfSpiders = 4;
 
-function createBat() {
-    const bat = document.createElement('div');
-    bat.classList.add('bat');
-    batContainer.appendChild(bat);
+function createSpider() {
+    const thread = document.createElement('div');
+    thread.classList.add('spider-thread');
+    spiderContainer.appendChild(thread);
 
-    const startX = -10 - (Math.random() * 20);
-    const startY = Math.random() * 100;
-    const endX = 110 + (Math.random() * 20);
-    const endY = Math.random() * 100;
+    const spider = document.createElement('div');
+    spider.classList.add('spider');
+    spider.textContent = '🕷️';
+    spiderContainer.appendChild(spider);
 
-    bat.style.setProperty('--start-x', startX);
-    bat.style.setProperty('--start-y', startY);
-    bat.style.setProperty('--end-x', endX);
-    bat.style.setProperty('--end-y', endY);
-    bat.style.setProperty('--rotation', `${Math.random() * 30 - 15}deg`);
-    bat.style.setProperty('--animation-duration', `${Math.random() * 5 + 8}s`);
-    bat.style.animationDelay = `-${Math.random() * 5}s`;
+    const leftPos = Math.random() * 30 + 35;
+    const duration = Math.random() * 2 + 3;
+    const threadLength = 170;
 
-    bat.addEventListener('animationend', () => {
-        bat.remove();
-        createBat();
+    thread.style.left = `${leftPos}%`;
+    thread.style.top = '0';
+    thread.style.setProperty('--thread-length', `${threadLength}px`);
+    thread.style.animation = `threadGrow ${duration}s ease-in-out`;
+
+    spider.style.left = `${leftPos}%`;
+    spider.style.setProperty('--spider-start', '0px');
+    spider.style.setProperty('--spider-end', `${threadLength - 10}px`);
+    spider.style.animation = `spiderDrop ${duration}s ease-in-out`;
+
+    spider.addEventListener('animationend', () => {
+        spider.remove();
+        thread.remove();
     });
 }
 
-for (let i = 0; i < numberOfBats; i++) {
-    createBat();
+// Criar aranhas iniciais
+for (let i = 0; i < numberOfSpiders; i++) {
+    setTimeout(() => createSpider(), i * 2500);
 }
+
+// Continuar criando aranhas
+setInterval(() => {
+    createSpider();
+}, 2500);
 
 document.getElementById('photosBtn').addEventListener('click', () => {
     showMessage('Aqui você veria as fotos da festa! 📸');
